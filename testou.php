@@ -31,7 +31,7 @@ echo scandir($name_destination);
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title> pintertest</title>
   </head>
   <body>
