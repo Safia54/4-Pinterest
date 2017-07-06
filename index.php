@@ -107,49 +107,6 @@ $size=['grid-item', 'grid-item grid-item--width2', 'grid-item grid-item--height2
 echo '</div>';
 ?>
 
-<!-- <div class="grid">
-
-	<div class="grid-item grid-item--width2"> 
-		<img src="<?php $nom_destination; ?>">	
-	</div>
-	<div class="grid-item grid-item--height2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--width2 grid-item--height2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--width2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--width2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--height2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--width2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item grid-item--height2">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-	<div class="grid-item">
-		<img src="<?php $nom_destination; ?>">
-	</div>
-
-</div> -->
 
 </body>
 </html>
