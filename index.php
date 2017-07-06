@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title> Pinterst by Safia </title>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,7 +19,7 @@
 	</form>
 
 
-<div class="grid">
+
 
 <?php
 
@@ -71,6 +72,9 @@ if(isset($_POST['submit'])) {
 
 //utiliser la fonction scandir() afin de lire le contenu du dossier et le retourner en un tableau de fichier 
 $contenu_dossier = scandir($destination);
+//faire une fonction unset pour enlever les deux premier éléments du tableau . et ..
+unset($contenu_dossier[0]);
+unset($contenu_dossier[1]);
 
 echo "<pre>";
 print_r($contenu_dossier);
@@ -78,14 +82,74 @@ echo "</pre>";
 
 //afficher en html le contenu du dossier contenant les images grâce à la balise img
 
-foreach ($contenu_dossier as $key => $value) {
-	echo '<img src="' . $destination . $value .'">';
-}
+//commencer le masonery
+echo '<div class="grid">';
+//faire un array des différentes class
+$size=['grid-item', 'grid-item grid-item--width2', 'grid-item grid-item--height2', 'grid-item grid-item--width2 grid-item--height2'];
+//pour en générer une valeur du tableau au hasard avec la fonction array_rand
+// $random = array_rand($size);
+//voir ce qui a dans la variable random qui affiche un chiffre clé index:
+// echo $random;
+//faire en sorte que ça génére la valeur en string qui correspond à la clé
+// $classe = $size[$random];
+// juste vérifier qui a dedans les string et puis le commenter après:
+// echo $classe; 
 
+//faire une boucle foreach pour soutirer du dossier chaque image
 
+	foreach ($contenu_dossier as $key => $value) {
+		$random = array_rand($size);
+		$classe = $size[$random];
+		echo '<div class="' . $classe . '"> <img src="' . $destination . $value .'"> </div>';
+	}
+
+//clore le masonery
+echo '</div>';
 ?>
 
-</div>
+<!-- <div class="grid">
+
+	<div class="grid-item grid-item--width2"> 
+		<img src="<?php $nom_destination; ?>">	
+	</div>
+	<div class="grid-item grid-item--height2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--width2 grid-item--height2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--width2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--width2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--height2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--width2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item grid-item--height2">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+	<div class="grid-item">
+		<img src="<?php $nom_destination; ?>">
+	</div>
+
+</div> -->
 
 </body>
 </html>

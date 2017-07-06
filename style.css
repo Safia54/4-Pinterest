@@ -5,10 +5,12 @@ body {
 }
 
 /* ---- grid ---- */
-masonry: {
-  columnWidth: 50
-}
 
+
+img{
+  height: 100%;
+  width: 100%;
+}
 .grid {
   background: #DDD;
   max-width: 1200px;
